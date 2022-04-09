@@ -1,11 +1,6 @@
-#! [allow(dead_code)]
-#! [allow(unused_variables)]
-#! [allow(unused_assignments)]
-#! [allow(unused_imports)]
+#![allow(dead_code)]
+#![allow(unused_variables)]
+#![allow(unused_assignments)]
+#![allow(unused_imports)]
 
-
-pub fn sec14_conccurency() {
-
-   
-
-}
+pub fn sec14_conccurency() {}

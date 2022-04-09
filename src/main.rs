@@ -1,7 +1,7 @@
-#! [allow(dead_code)]
-#! [allow(unused_variables)]
-#! [allow(unused_assignments)]
-#! [allow(unused_imports)]
+#![allow(dead_code)]
+#![allow(unused_variables)]
+#![allow(unused_assignments)]
+#![allow(unused_imports)]
 
 mod basics;
 mod cargocratesmodules;
@@ -19,24 +19,20 @@ mod testing;
 mod traitsandgenerics;
 mod unsafemethods;
 
-
 fn main() {
-
-
-    basics::sec2_basics();
-    rustprinciples::sec3_rust_principles();
+    // basics::sec2_basics();
+    // rustprinciples::sec3_rust_principles();
+    // structsandlifetimes::sec4_structs_lifetimes();
     enumsandpatterns::sec5_enums_patterns();
-    traitsandgenerics::sec6_traits_generics();
-    cargocratesmodules::sec7_cargo_crates_modules();
-    commoncollections::sec8_common_collections();
-    errorhandling::sec9_error_handling();
-    testing::sec10_testing();
-    cliprogram::sec11_cli_program();
-    iteratorsandclosures::sec12_iterators_closures();
-    pointers::sec13_pointers();
-    concurrency::sec14_conccurency();
-    macros::sec15_macros();
-    unsafemethods::sec16_unsafe_rust(); 
-    
-
+    // traitsandgenerics::sec6_traits_generics();
+    // cargocratesmodules::sec7_cargo_crates_modules();
+    // commoncollections::sec8_common_collections();
+    // errorhandling::sec9_error_handling();
+    // testing::sec10_testing();
+    // cliprogram::sec11_cli_program();
+    // iteratorsandclosures::sec12_iterators_closures();
+    // pointers::sec13_pointers();
+    // concurrency::sec14_conccurency();
+    // macros::sec15_macros();
+    // unsafemethods::sec16_unsafe_rust();
 }
