@@ -1,16 +1,14 @@
-#![allow(dead_code)]
-#![allow(unused_variables)]
-#![allow(unused_assignments)]
-#![allow(unused_imports)]
+#! [allow(dead_code)]
+#! [allow(unused_variables)]
+#! [allow(unused_assignments)]
+#! [allow(unused_imports)]
 
 pub fn sec4_structs_lifetimes() {
-
     structs();
     methods();
     lifetimes();
     lifetimes_structs();
     static_lifetimes();
-
 }
 
 fn structs() {
@@ -28,20 +26,24 @@ fn structs() {
     //          -
     //          -
     //------------------------------------------------------------------------------------------------
-    
+
     //          -Field Struct Example-
     struct User {
         active: bool,
         username: String,
-        sign_in_count: u32
+        sign_in_count: u32,
     }
-    
-    let user1 = User{active: true, username: String::from("Dekum"), sign_in_count: 0};
+
+    let user1 = User {
+        active: true,
+        username: String::from("Dekum"),
+        sign_in_count: 0,
+    };
     println!("{}", user1.username);
-    
+
     let user2 = build_user(String::from("Tanjiro"));
     println!("{}", user2.username);
-    
+
     fn build_user(username: String) -> User {
         User {
             username,
@@ -49,29 +51,25 @@ fn structs() {
             sign_in_count: 1,
         }
     }
-    
+
     //------------------------------------------------------------------------------------------------
     //          -Tuple Struct Example-
-    
-    struct Coordinates(i32,i32,i32);
-    
-    let cords = Coordinates(1,2,3);
-    
+
+    struct Coordinates(i32, i32, i32);
+
+    let cords = Coordinates(1, 2, 3);
+
     //------------------------------------------------------------------------------------------------
     //          -Unit Struct Example-
     //              -Range is an example of a struct within Rust
     //                  -Ex: ..., 1..5 , and Range {start: 1, end: 5}
-    
-    
-
 }
 fn methods() {
     //      Methods(similar to functions)
     //          -Methods are defined within the context of a struct, enum and trait object
     //          -Methods ALWAYS have their 1st parameter as "Self", which is representing the isntance of the Struct
-    //           
+    //
     //------------------------------------------------------------------------------------------------
-
 
     struct Square {
         width: u32,
@@ -92,7 +90,10 @@ fn methods() {
         }
     }
 
-    let mut sq = Square {width: 5, height: 5};
+    let mut sq = Square {
+        width: 5,
+        height: 5,
+    };
     println!("{}", sq.area());
     println!("{}", sq.whats_my_width());
 
@@ -100,7 +101,7 @@ fn methods() {
     println!("{}", sq.whats_my_width());
 }
 
-fn lifetimes(){
+fn lifetimes() {
     //      Lifetimes(similar to functions)
     //          -Every reference has a lifetime
     //          -Lifetimes are Implicit and Inferred
@@ -121,29 +122,27 @@ fn lifetimes(){
     //&'a i32
     // &'a mute i32
 
-    fn example <'a>(x: &'a str) -> &'a str {
+    fn example<'a>(x: &'a str) -> &'a str {
         x
     }
-    
+
     //'a for one parameter, 'b for second parameter
-    
+
     //Example of why we need Lifetime Annotations.
-    fn example_2 <'a, 'b>(x: &'a str, y: &'b str) -> &'a str {
+    fn example_2<'a, 'b>(x: &'a str, y: &'b str) -> &'a str {
         x
     }
 }
 
 fn lifetimes_structs() {
-
     struct MyString<'a> {
         text: &'a str,
     }
 
     let str1 = String::from("This is my String");
-    let x = MyString{text: str1.as_str()};
-
-
-
+    let x = MyString {
+        text: str1.as_str(),
+    };
 }
 fn static_lifetimes() {
     // Static Lifetimes
@@ -151,7 +150,6 @@ fn static_lifetimes() {
     //          -Sting Literals all have static lifetimes.
     //              -The Static Liftimes is stored directly in the programs binary
     //          -Most Lifetime Errors happen from Dangling References.
-    
-    let s: &'static str = "I have a static lifetime.";
 
+    let s: &'static str = "I have a static lifetime.";
 }
