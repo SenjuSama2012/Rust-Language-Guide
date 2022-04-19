@@ -23,8 +23,8 @@ fn main() {
     // basics::sec2_basics();
     // rustprinciples::sec3_rust_principles();
     // structsandlifetimes::sec4_structs_lifetimes();
-    enumsandpatterns::sec5_enums_patterns();
-    // traitsandgenerics::sec6_traits_generics();
+    // enumsandpatterns::sec5_enums_patterns();
+    traitsandgenerics::sec6_traits_generics();
     // cargocratesmodules::sec7_cargo_crates_modules();
     // commoncollections::sec8_common_collections();
     // errorhandling::sec9_error_handling();
