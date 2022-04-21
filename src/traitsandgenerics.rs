@@ -91,7 +91,7 @@ fn traits_parameters() {
             String::from("This is a Complete Guide for Rust!")
         }
     }
-    
+
     struct Course {
         headline: String,
         author: String,
@@ -117,19 +117,19 @@ fn traits_parameters() {
         headline: String::from("Another Headline!"),
         author: String::from("Inosuke!"),
     };
-    
+
     println!("{}", course1.overview());
     println!("{}", course2.overview());
     println!("***Lesson Ends Here*** \n");
-    
+
     //------------------------------------------------------------------------------------------------
     //Lesson Starts Here for Parameters
     println!("\n ***Lesson Starts Here for Trait Parameters***");
-    
+
     fn call_overview<T: Overview>(item: &T) {
         println!("Overview: {}", item.overview())
     }
-    
+
     call_overview(&course1);
     call_overview(&course2);
 
@@ -142,17 +142,13 @@ fn traits_parameters() {
     //fn overview<T: Overviw + AnotherTrait(item1: &T, item2: &T)
 
     println!("***Lesson Ends Here*** \n");
-    
-    
-    
-    
 }
 fn drop() {
     //--------------------------------------------------------------------------------------------------------------------
     //              -Utility Traits & Drop
     //                  - Drop Traits
-    //                      - 
-    //                  - 
+    //                      -
+    //                  -
     //
     //--------------------------------------------------------------------------------------------------------------------
     println!("\n ***Lesson Starts Here for Drop Trait***");
@@ -194,24 +190,22 @@ fn drop() {
         author: String::from("Inosuke!"),
     };
 
-
-
     // fn call_overview<T: Overview>(item: &T) {
     //     println!("Overview: {}", item.overview())
     // }
-    
+
     println!("***Lesson Ends Here*** \n");
 }
 fn clone() {
 
-//Clone Explained from the Standard Library. CODE BELOW AS EXAMPLE
+    //Clone Explained from the Standard Library. CODE BELOW AS EXAMPLE
 
-//     trait Clone: Sized {
-//         fn clone(&self) -> Self;
-//         fn flone_from(&mut set, source: &Self) {
-//             &self = source.clone();
-//         }
-//     }
+    //     trait Clone: Sized {
+    //         fn clone(&self) -> Self;
+    //         fn flone_from(&mut set, source: &Self) {
+    //             &self = source.clone();
+    //         }
+    //     }
 }
 fn copy() {
 
@@ -230,31 +224,29 @@ fn from_into() {
     //--------------------------------------------------------------------------------------------------------------------
 }
 fn operator_overloading() {
-
     #[derive(Debug)]
     struct Point2<T> {
         x: T,
         y: T,
     }
 
-    impl<T> Add for Point2<T> 
-        where
-        T: Add<Output = T> {
-            type Output = Self;
-            fn add(self, rhs: Self) -> Self {
-                Point2 {
-                    x: self.x + rhs.x,
-                    y: self.y + rhs.y,
-                }
+    impl<T> Add for Point2<T>
+    where
+        T: Add<Output = T>,
+    {
+        type Output = Self;
+        fn add(self, rhs: Self) -> Self {
+            Point2 {
+                x: self.x + rhs.x,
+                y: self.y + rhs.y,
             }
         }
+    }
 
-
-    let coordinate1 = Point2 {x: 5.0, y : 5.0};
-    let coordinate2 = Point2 {x: 1.0, y: 2.0};
+    let coordinate1 = Point2 { x: 5.0, y: 5.0 };
+    let coordinate2 = Point2 { x: 1.0, y: 2.0 };
 
     let sum = coordinate1 + coordinate2;
 
     println!("{:?}", sum);
-
 }

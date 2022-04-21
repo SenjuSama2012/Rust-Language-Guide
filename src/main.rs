@@ -24,8 +24,8 @@ fn main() {
     // rustprinciples::sec3_rust_principles();
     // structsandlifetimes::sec4_structs_lifetimes();
     // enumsandpatterns::sec5_enums_patterns();
-    traitsandgenerics::sec6_traits_generics();
-    // cargocratesmodules::sec7_cargo_crates_modules();
+    // traitsandgenerics::sec6_traits_generics();
+    cargocratesmodules::sec7_cargo_crates_modules();
     // commoncollections::sec8_common_collections();
     // errorhandling::sec9_error_handling();
     // testing::sec10_testing();
